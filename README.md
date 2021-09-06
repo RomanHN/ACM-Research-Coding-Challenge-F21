@@ -1,32 +1,26 @@
-# ACM Research Coding Challenge (Fall 2021)
+# Approach
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#no-collaboration-policy)No Collaboration Policy
+After splitting the input text into sentences using regular expressions, I used the pre-trained sentiment analyzer VADER from the Natural Language Toolkit (NLTK) in order to analyze each sentence. I took the "compound" value from each analysis, which is a score from -1 to 1 that summarizes the values for negative, neutral, and positive sentiment. Finally, I took the weighted average of the sentiment scores based on the number of characters in each sentence, which gave me a score for the input text as a whole.
 
-**You may not collaborate with anyone on this challenge.**  You  _are_  allowed to use Internet documentation. If you  _do_  use existing code (either from Github, Stack Overflow, or other sources),  **please cite your sources in the README**.
+# Conclusion
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#submission-procedure)Submission Procedure
+The average sentiment score of the input text is about 0.366, where a value closer to -1 represents negative sentiment and a value closer to 1 represents positive sentiment. This means that the text has an overall positive sentiment.
 
-Please follow the below instructions on how to submit your answers.
+When I first read the input text, I predicted that its sentiment would be a bit closer to negative, just based off the general negative tone the text gave off to me, especially in the first paragraph. For example, two excerpts that stand out from this paragraph include `You towered with rage, yelled quotes at me.` and `Carcasses bleed at the sight of the murderer`. However, the second paragraph does spend a lot of time on the topic of the many good qualities of some man, which could contribute in the positive direction to the text's sentiment.
 
-1.  Create a  **public**  fork of this repo and name it  `ACM-Research-Coding-Challenge-F21`. To fork this repo, click the button on the top right and click the "Fork" button.
+I decided to visualize this shift in sentiment using a scatterplot graph, where the $x$-axis represents how far along in the text each sentence is and the $y$-axis represents the score of each sentence.
 
-2.  Clone the fork of the repo to your computer using  `git clone [the URL of your clone]`. You may need to install Git for this (Google it).
+![scatterplot of sentence position versus sentiment score](/scatterplot.png)
 
-3.  Complete the Challenge based on the instructions below.
+As figure 1 shows, the sentiment scores towards the end of the text are much more positive than those earlier in the text, and so we can conclude it's primarily the second paragraph which brings the overall sentiment score up.
 
-4.  Submit your solution by filling out this [form](https://acmutd.typeform.com/to/zF1IcBGR).
+# Evaluation
 
-## Assessment Criteria 
+One issue with my approach is that VADER was not trained for sentences from fictional literature, but rather short texts from social media. This could lower the accuracy of the sentiment evaluations because that the model isn't used to the kind of language used in literature. One way to improve this aspect of my approach could be to develop and train my own sentiment analyzer using a corpus of older fiction.
 
-Submissions will be evaluated holistically and based on a combination of effort, validity of approach, analysis, adherence to the prompt, use of outside resources (encouraged), promptness of your submission, and other factors. Your approach and explanation (detailed below) is the most weighted criteria, and partial solutions are accepted. 
+# Resources Used
 
-## [](https://github.com/ACM-Research/Coding-Challenge-S21#question-one)Question One
-
-[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) is a natural language processing technique that computes a sentiment score for a body of text. This sentiment score can quantify how positive, negative, or neutral the text is. The following dataset in  `input.txt`  contains a relatively large body of text.
-
-**Determine an overall sentiment score of the text in this file, explain what this score means, and contrast this score with what you expected.**  If your solution also provides different metrics about the text (magnitude, individual sentence score, etc.), feel free to add it to your explanation.   
-
-**You may use any programming language you feel most comfortable. We recommend Python because it is the easiest to implement. You're allowed to use any library/API you want to implement this**, just document which ones you used in this README file. Try to complete this as soon as possible as submissions are evaluated on a rolling basis.
-
-Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
-
+- [Matplotlib – matplotlib.pyplot.scatter](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html)
+- [Real Python – Sentiment Analysis: First Steps With Python's NLTK Library](https://realpython.com/python-nltk-sentiment-analysis)
+- [Real Python – Working With Files in Python](https://realpython.com/working-with-files-in-python/)
+- [Regular-Expressions.info – Lookahead and Lookbehind Zero-Length Assertions](https://www.regular-expressions.info/lookaround.html)
