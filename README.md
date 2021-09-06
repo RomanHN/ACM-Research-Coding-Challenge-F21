@@ -8,11 +8,11 @@ The average sentiment score of the input text is about 0.366, where a value clos
 
 When I first read the input text, I predicted that its sentiment would be a bit closer to negative, just based off the general negative tone the text gave off to me, especially in the first paragraph. For example, two excerpts that stand out from this paragraph include `You towered with rage, yelled quotes at me.` and `Carcasses bleed at the sight of the murderer`. However, the second paragraph does spend a lot of time on the topic of the many good qualities of some man, which could contribute in the positive direction to the text's sentiment.
 
-I decided to visualize this shift in sentiment using a scatterplot graph, where the $x$-axis represents how far along in the text each sentence is and the $y$-axis represents the score of each sentence.
+I decided to visualize this shift in sentiment using a scatterplot graph, where the x-axis represents how far along in the text each sentence is and the y-axis represents the score of each sentence.
 
 ![scatterplot of sentence position versus sentiment score](/scatterplot.png)
 
-As figure 1 shows, the sentiment scores towards the end of the text are much more positive than those earlier in the text, and so we can conclude it's primarily the second paragraph which brings the overall sentiment score up.
+As the figure shows, the sentiment scores towards the end of the text are much more positive than those earlier in the text, and so we can conclude it's primarily the second paragraph which brings the overall sentiment score up.
 
 # Evaluation
 
