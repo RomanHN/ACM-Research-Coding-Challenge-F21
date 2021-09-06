@@ -4,7 +4,7 @@ After splitting the input text into sentences using regular expressions, I used 
 
 # Conclusion
 
-The average sentiment score of the input text is about 0.366, where a value closer to -1 represents negative sentiment and a value closer to 1 represents positive sentiment. This means that the text has an overall positive sentiment.
+The average sentiment score of the input text is about 0.366, where a value closer to -1 represents negative sentiment and a value closer to 1 represents positive sentiment. This means that the text has an overall positive sentiment. You can view the sentiment scores for each sentence in [sentiment_scores.txt](/sentiment_scores.txt).
 
 When I first read the input text, I predicted that its sentiment would be a bit closer to negative, just based off the general negative tone the text gave off to me, especially in the first paragraph. For example, two excerpts that stand out from this paragraph include `You towered with rage, yelled quotes at me.` and `Carcasses bleed at the sight of the murderer`. However, the second paragraph does spend a lot of time on the topic of the many good qualities of some man, which could contribute in the positive direction to the text's sentiment.
 
